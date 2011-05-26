@@ -1,0 +1,289 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C3F94F23138DDD1D009EAD27 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F94F22138DDD1D009EAD27 /* UIKit.framework */; };
+		C3F94F25138DDD1D009EAD27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F94F24138DDD1D009EAD27 /* Foundation.framework */; };
+		C3F94F27138DDD1D009EAD27 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F94F26138DDD1D009EAD27 /* CoreGraphics.framework */; };
+		C3F94F29138DDD1D009EAD27 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F94F28138DDD1D009EAD27 /* CoreData.framework */; };
+		C3F94F2F138DDD1D009EAD27 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3F94F2D138DDD1D009EAD27 /* InfoPlist.strings */; };
+		C3F94F32138DDD1D009EAD27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F94F31138DDD1D009EAD27 /* main.m */; };
+		C3F94F35138DDD1D009EAD27 /* foofarawAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F94F34138DDD1D009EAD27 /* foofarawAppDelegate.m */; };
+		C3F94F38138DDD1D009EAD27 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F94F36138DDD1D009EAD27 /* MainWindow.xib */; };
+		C3F94F3B138DDD1D009EAD27 /* foofaraw.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3F94F39138DDD1D009EAD27 /* foofaraw.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C3F94F1E138DDD1D009EAD27 /* foofaraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foofaraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3F94F22138DDD1D009EAD27 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C3F94F24138DDD1D009EAD27 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C3F94F26138DDD1D009EAD27 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C3F94F28138DDD1D009EAD27 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C3F94F2C138DDD1D009EAD27 /* foofaraw-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "foofaraw-Info.plist"; sourceTree = "<group>"; };
+		C3F94F2E138DDD1D009EAD27 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C3F94F30138DDD1D009EAD27 /* foofaraw-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "foofaraw-Prefix.pch"; sourceTree = "<group>"; };
+		C3F94F31138DDD1D009EAD27 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C3F94F33138DDD1D009EAD27 /* foofarawAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = foofarawAppDelegate.h; sourceTree = "<group>"; };
+		C3F94F34138DDD1D009EAD27 /* foofarawAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = foofarawAppDelegate.m; sourceTree = "<group>"; };
+		C3F94F37138DDD1D009EAD27 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		C3F94F3A138DDD1D009EAD27 /* foofaraw.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = foofaraw.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C3F94F1B138DDD1C009EAD27 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3F94F23138DDD1D009EAD27 /* UIKit.framework in Frameworks */,
+				C3F94F25138DDD1D009EAD27 /* Foundation.framework in Frameworks */,
+				C3F94F27138DDD1D009EAD27 /* CoreGraphics.framework in Frameworks */,
+				C3F94F29138DDD1D009EAD27 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C3F94F13138DDD1C009EAD27 = {
+			isa = PBXGroup;
+			children = (
+				C3F94F2A138DDD1D009EAD27 /* foofaraw */,
+				C3F94F21138DDD1D009EAD27 /* Frameworks */,
+				C3F94F1F138DDD1D009EAD27 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C3F94F1F138DDD1D009EAD27 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3F94F1E138DDD1D009EAD27 /* foofaraw.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C3F94F21138DDD1D009EAD27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3F94F22138DDD1D009EAD27 /* UIKit.framework */,
+				C3F94F24138DDD1D009EAD27 /* Foundation.framework */,
+				C3F94F26138DDD1D009EAD27 /* CoreGraphics.framework */,
+				C3F94F28138DDD1D009EAD27 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3F94F2A138DDD1D009EAD27 /* foofaraw */ = {
+			isa = PBXGroup;
+			children = (
+				C3F94F33138DDD1D009EAD27 /* foofarawAppDelegate.h */,
+				C3F94F34138DDD1D009EAD27 /* foofarawAppDelegate.m */,
+				C3F94F36138DDD1D009EAD27 /* MainWindow.xib */,
+				C3F94F39138DDD1D009EAD27 /* foofaraw.xcdatamodeld */,
+				C3F94F2B138DDD1D009EAD27 /* Supporting Files */,
+			);
+			path = foofaraw;
+			sourceTree = "<group>";
+		};
+		C3F94F2B138DDD1D009EAD27 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C3F94F2C138DDD1D009EAD27 /* foofaraw-Info.plist */,
+				C3F94F2D138DDD1D009EAD27 /* InfoPlist.strings */,
+				C3F94F30138DDD1D009EAD27 /* foofaraw-Prefix.pch */,
+				C3F94F31138DDD1D009EAD27 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C3F94F1D138DDD1C009EAD27 /* foofaraw */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3F94F3E138DDD1D009EAD27 /* Build configuration list for PBXNativeTarget "foofaraw" */;
+			buildPhases = (
+				C3F94F1A138DDD1C009EAD27 /* Sources */,
+				C3F94F1B138DDD1C009EAD27 /* Frameworks */,
+				C3F94F1C138DDD1C009EAD27 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = foofaraw;
+			productName = foofaraw;
+			productReference = C3F94F1E138DDD1D009EAD27 /* foofaraw.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C3F94F15138DDD1C009EAD27 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Rush Devo";
+			};
+			buildConfigurationList = C3F94F18138DDD1C009EAD27 /* Build configuration list for PBXProject "foofaraw" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C3F94F13138DDD1C009EAD27;
+			productRefGroup = C3F94F1F138DDD1D009EAD27 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C3F94F1D138DDD1C009EAD27 /* foofaraw */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C3F94F1C138DDD1C009EAD27 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3F94F2F138DDD1D009EAD27 /* InfoPlist.strings in Resources */,
+				C3F94F38138DDD1D009EAD27 /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C3F94F1A138DDD1C009EAD27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3F94F32138DDD1D009EAD27 /* main.m in Sources */,
+				C3F94F35138DDD1D009EAD27 /* foofarawAppDelegate.m in Sources */,
+				C3F94F3B138DDD1D009EAD27 /* foofaraw.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C3F94F2D138DDD1D009EAD27 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3F94F2E138DDD1D009EAD27 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C3F94F36138DDD1D009EAD27 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3F94F37138DDD1D009EAD27 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C3F94F3C138DDD1D009EAD27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C3F94F3D138DDD1D009EAD27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		C3F94F3F138DDD1D009EAD27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "foofaraw/foofaraw-Prefix.pch";
+				INFOPLIST_FILE = "foofaraw/foofaraw-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C3F94F40138DDD1D009EAD27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "foofaraw/foofaraw-Prefix.pch";
+				INFOPLIST_FILE = "foofaraw/foofaraw-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C3F94F18138DDD1C009EAD27 /* Build configuration list for PBXProject "foofaraw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3F94F3C138DDD1D009EAD27 /* Debug */,
+				C3F94F3D138DDD1D009EAD27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3F94F3E138DDD1D009EAD27 /* Build configuration list for PBXNativeTarget "foofaraw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3F94F3F138DDD1D009EAD27 /* Debug */,
+				C3F94F40138DDD1D009EAD27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C3F94F39138DDD1D009EAD27 /* foofaraw.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C3F94F3A138DDD1D009EAD27 /* foofaraw.xcdatamodel */,
+			);
+			currentVersion = C3F94F3A138DDD1D009EAD27 /* foofaraw.xcdatamodel */;
+			path = foofaraw.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C3F94F15138DDD1C009EAD27 /* Project object */;
+}
