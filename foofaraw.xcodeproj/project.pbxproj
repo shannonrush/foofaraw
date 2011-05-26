@@ -16,6 +16,9 @@
 		C3F94F35138DDD1D009EAD27 /* foofarawAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F94F34138DDD1D009EAD27 /* foofarawAppDelegate.m */; };
 		C3F94F38138DDD1D009EAD27 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F94F36138DDD1D009EAD27 /* MainWindow.xib */; };
 		C3F94F3B138DDD1D009EAD27 /* foofaraw.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3F94F39138DDD1D009EAD27 /* foofaraw.xcdatamodeld */; };
+		C3F94F60138DE94E009EAD27 /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F94F5E138DE94E009EAD27 /* WindowController.m */; };
+		C3F94F61138DE94E009EAD27 /* WindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F94F5F138DE94E009EAD27 /* WindowController.xib */; };
+		C3F94F6B138DEDB6009EAD27 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F94F6A138DEDB6009EAD27 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,10 @@
 		C3F94F34138DDD1D009EAD27 /* foofarawAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = foofarawAppDelegate.m; sourceTree = "<group>"; };
 		C3F94F37138DDD1D009EAD27 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		C3F94F3A138DDD1D009EAD27 /* foofaraw.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = foofaraw.xcdatamodel; sourceTree = "<group>"; };
+		C3F94F5D138DE94E009EAD27 /* WindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
+		C3F94F5E138DE94E009EAD27 /* WindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
+		C3F94F5F138DE94E009EAD27 /* WindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WindowController.xib; sourceTree = "<group>"; };
+		C3F94F6A138DEDB6009EAD27 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3F94F6B138DEDB6009EAD27 /* AVFoundation.framework in Frameworks */,
 				C3F94F23138DDD1D009EAD27 /* UIKit.framework in Frameworks */,
 				C3F94F25138DDD1D009EAD27 /* Foundation.framework in Frameworks */,
 				C3F94F27138DDD1D009EAD27 /* CoreGraphics.framework in Frameworks */,
@@ -52,6 +60,7 @@
 		C3F94F13138DDD1C009EAD27 = {
 			isa = PBXGroup;
 			children = (
+				C3F94F6A138DEDB6009EAD27 /* AVFoundation.framework */,
 				C3F94F2A138DDD1D009EAD27 /* foofaraw */,
 				C3F94F21138DDD1D009EAD27 /* Frameworks */,
 				C3F94F1F138DDD1D009EAD27 /* Products */,
@@ -82,8 +91,9 @@
 			children = (
 				C3F94F33138DDD1D009EAD27 /* foofarawAppDelegate.h */,
 				C3F94F34138DDD1D009EAD27 /* foofarawAppDelegate.m */,
-				C3F94F36138DDD1D009EAD27 /* MainWindow.xib */,
-				C3F94F39138DDD1D009EAD27 /* foofaraw.xcdatamodeld */,
+				C3F94F5D138DE94E009EAD27 /* WindowController.h */,
+				C3F94F5E138DE94E009EAD27 /* WindowController.m */,
+				C3F94F41138DE4EE009EAD27 /* Resources */,
 				C3F94F2B138DDD1D009EAD27 /* Supporting Files */,
 			);
 			path = foofaraw;
@@ -98,6 +108,24 @@
 				C3F94F31138DDD1D009EAD27 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C3F94F41138DE4EE009EAD27 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C3F94F42138DE4FF009EAD27 /* XIB */,
+				C3F94F39138DDD1D009EAD27 /* foofaraw.xcdatamodeld */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C3F94F42138DE4FF009EAD27 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				C3F94F36138DDD1D009EAD27 /* MainWindow.xib */,
+				C3F94F5F138DE94E009EAD27 /* WindowController.xib */,
+			);
+			name = XIB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +180,7 @@
 			files = (
 				C3F94F2F138DDD1D009EAD27 /* InfoPlist.strings in Resources */,
 				C3F94F38138DDD1D009EAD27 /* MainWindow.xib in Resources */,
+				C3F94F61138DE94E009EAD27 /* WindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +194,7 @@
 				C3F94F32138DDD1D009EAD27 /* main.m in Sources */,
 				C3F94F35138DDD1D009EAD27 /* foofarawAppDelegate.m in Sources */,
 				C3F94F3B138DDD1D009EAD27 /* foofaraw.xcdatamodeld in Sources */,
+				C3F94F60138DE94E009EAD27 /* WindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
