@@ -22,6 +22,23 @@
 @synthesize persistentStoreCoordinator=__persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    foofarawAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+	NSManagedObjectContext *context = [appDelegate managedObjectContext];
+	NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Account" inManagedObjectContext:context];
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	[request setEntity:entityDesc];
+	NSError *error;
+	NSArray *accounts = [context executeFetchRequest:request error:&error];
+    if ([accounts count]>0) {
+        WindowController *windowController = [[WindowController alloc] initWithNibName:@"WindowController" bundle:[NSBundle mainBundle]];
+        self.viewController = windowController;
+        [windowController release];
+    } else {
+        SetupController *setupController = [[SetupController alloc] initWithNibName:@"SetupController" bundle:[NSBundle mainBundle]];
+        self.viewController = setupController;
+        [setupController release];
+    }
+
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

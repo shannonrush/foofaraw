@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class WindowController;
+@class SetupController;
 
 @interface foofarawAppDelegate : NSObject <UIApplicationDelegate> {
 

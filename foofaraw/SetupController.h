@@ -1,8 +1,8 @@
 //
-//  WindowController.h
+//  SetupController.h
 //  foofaraw
 //
-//  Created by Shannon Rush on 5/25/11.
+//  Created by Shannon Rush on 5/26/11.
 //  Copyright 2011 Rush Devo. All rights reserved.
 //
 
@@ -10,11 +10,9 @@
 #import <AVFoundation/AVFoundation.h>
 #import "BaseController.h"
 
-
-@interface WindowController : BaseController {
+@interface SetupController : BaseController {
     AVCaptureSession *captureSession;
     AVCaptureVideoPreviewLayer *previewLayer;
 }
-
 
 @end
