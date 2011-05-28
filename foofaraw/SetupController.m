@@ -52,29 +52,155 @@
     [accountObject setValue:personalityString forKey:@"personality"];
 	NSError *error;
 	[context save:&error];
-    [self setup];
+    [self introduction];
 }
 
--(void)setup {
-    UIView *greetingView = [[UIView alloc]initWithFrame:CGRectMake(150.0, 200.0, 146.0, 96.0)];
+-(void)introduction {
+    UIView *greetingView = [self greetingView];
+    UIView *intro1View = [self intro1View];
+    UIView *intro2View = [self intro2View];
+    usernameResponseView = [self usernameResponseView];
+    [self.view addSubview:greetingView];
+    [self.view addSubview:intro1View];
+    [self.view addSubview:intro2View];
+    [self.view addSubview:usernameResponseView];
+    [greetingView release];
+    [intro1View release];
+    [intro2View release];
+    [usernameResponseView release];
+    [UIView animateWithDuration:2.0 delay:1.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        greetingView.alpha = 1.0; 
+    } completion:^ (BOOL finished) {
+        if (finished) {
+            [UIView animateWithDuration:2.0 delay:2.0 options:UIViewAnimationCurveEaseInOut animations:^ {
+                greetingView.alpha = 0.0;
+                intro1View.alpha = 1.0;
+            }completion:^(BOOL finished) {
+                [UIView animateWithDuration:2.0 delay:2.0 options:UIViewAnimationCurveEaseInOut animations:^ {
+                    intro1View.alpha = 0.0;
+                    intro2View.alpha = 1.0;
+                }completion:^ (BOOL finished) {
+                    [UIView animateWithDuration:2.0 delay:2.0 options:UIViewAnimationCurveEaseInOut animations:^ {
+                        intro2View.alpha = 0.0;
+                        usernameResponseView.alpha = 1.0;
+                    }completion:^(BOOL finished) {
+                        [usernameResponseField becomeFirstResponder];
+                    }];
+                }];
+            }];
+        }
+    }];
+}
+
+-(void)infoCollection {
+    [UIView animateWithDuration:2.0 delay:2.0 options:UIViewAnimationCurveEaseInOut animations:^{
+        usernameResponseView.alpha = 0.0;
+    }completion:^(BOOL finished) {
+        
+    }];
+}
+
+-(UIView *)greetingView {
+    UIView *greetingView = [[UIView alloc]initWithFrame:CGRectMake(175.0, 100.0, 146.0, 96.0)];
     UIImage *bubble1 = [UIImage imageNamed:@"bubble1.png"];
     UIImageView *bubble1View = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 146.0, 96.0)];
     bubble1View.image = bubble1;
     [greetingView addSubview:bubble1View];
     [bubble1View release];
-    UILabel *greetingLabel = [[UILabel alloc]initWithFrame:CGRectMake(10.0, 10.0, 126.0, 60.0)];
+    UILabel *greetingLabel = [[UILabel alloc]initWithFrame:CGRectMake(10.0, 20.0, 126.0, 30.0)];
     greetingLabel.backgroundColor = [UIColor clearColor];
     greetingLabel.textAlignment = UITextAlignmentCenter;
-    greetingLabel.font = [UIFont fontWithName:@"Helvetica" size:30.0];
+    greetingLabel.font = [UIFont fontWithName:[personality valueForKey:@"font"] size:30.0];
     greetingLabel.text = [personality valueForKey:@"greeting"];
     [greetingView addSubview:greetingLabel];
     [greetingLabel release];
     greetingView.alpha = 0.0;
-    [self.view addSubview:greetingView];
-    [greetingView release];
-    [UIView animateWithDuration:2.0 animations:^{
-        greetingView.alpha = 1.0;  
-    }];
+    return greetingView;
+}
+
+-(UIView *)intro1View {
+    UIView *intro1View = [[UIView alloc]initWithFrame:CGRectMake(2.0, 150.0, 290.0, 150.0)];
+    UIImage *intro1Image = [UIImage imageNamed:@"bubble2l.png"];
+    UIImageView *intro1ImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 290.0, 150.0)];
+    intro1ImageView.image = intro1Image;
+    [intro1View addSubview:intro1ImageView];
+    [intro1ImageView release];
+    UILabel *intro1Label = [[UILabel alloc]initWithFrame:CGRectMake(0.0, 20.0, 270.0, 60.0)];
+    intro1Label.adjustsFontSizeToFitWidth = YES;
+    intro1Label.minimumFontSize = 10.0;
+    intro1Label.backgroundColor = [UIColor clearColor];
+    intro1Label.textAlignment = UITextAlignmentCenter;
+    intro1Label.font = [UIFont fontWithName:[personality valueForKey:@"font"] size:20.0];
+    intro1Label.text = [personality valueForKey:@"intro1"];
+    [intro1View addSubview:intro1Label];
+    [intro1Label release];
+    intro1View.alpha = 0.0;
+    return intro1View;
+}
+
+-(UIView *)intro2View {
+    UIView *intro2View = [[UIView alloc]initWithFrame:CGRectMake(20.0, 20.0, 290.0, 175.0)];
+    UIImage *intro2Image = [UIImage imageNamed:@"bubble2r.png"];
+    UIImageView *intro2ImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 290.0, 175.0)];
+    intro2ImageView.image = intro2Image;
+    [intro2View addSubview:intro2ImageView];
+    [intro2ImageView release];
+    UILabel *intro2Label = [[UILabel alloc]initWithFrame:CGRectMake(10.0, 15.0, 270.0, 80.0)];
+    intro2Label.backgroundColor = [UIColor clearColor];
+    intro2Label.adjustsFontSizeToFitWidth = YES;
+    intro2Label.minimumFontSize = 10.0;
+    intro2Label.numberOfLines = 2;
+    intro2Label.textAlignment = UITextAlignmentCenter;
+    intro2Label.font = [UIFont fontWithName:[personality valueForKey:@"font"] size:20.0];
+    intro2Label.text = [NSString stringWithFormat:@"%@ %@...\nWhat's yours?",[personality valueForKey:@"intro2"],name];
+    [intro2View addSubview:intro2Label];
+    [intro2Label release];
+    intro2View.alpha = 0.0;
+    return intro2View;
+}
+
+-(UIView *)usernameResponseView {
+    usernameResponseView = [[UIView alloc]initWithFrame:CGRectMake(20.0, 100.0, 300.0, 150.0)];
+    UIImage *usernameResponseImage = [UIImage imageNamed:@"response1.png"];
+    UIImageView *usernameResponseImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 300.0, 150.0)];
+    usernameResponseImageView.image = usernameResponseImage;
+    [usernameResponseView addSubview:usernameResponseImageView];
+    [usernameResponseImageView release];
+    usernameResponseField = [[UITextField alloc]initWithFrame:CGRectMake(10.0, 40.0, 280.0, 33.0)];
+    usernameResponseField.delegate = self;
+    usernameResponseField.returnKeyType = UIReturnKeyGo;
+    usernameResponseField.placeholder = @"What should I call you?";
+    [usernameResponseView addSubview:usernameResponseField];
+    [usernameResponseField release];
+    usernameResponseView.alpha = 0.0;
+    return usernameResponseView;
+}
+
+-(void)submitUsername {
+    foofarawAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Account" inManagedObjectContext:context];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDesc];
+    NSError *error;
+    NSManagedObject *account = [[context executeFetchRequest:request error:&error] objectAtIndex:0];
+    [request release];    
+    [account setValue:usernameResponseField.text forKey:@"username"];
+    username = [[NSString alloc]initWithString:usernameResponseField.text];
+	[context save:&error];
+    [self infoCollection];
+}
+
+
+
+#pragma mark UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField==usernameResponseField) {
+        [self submitUsername];
+    }
+    [textField resignFirstResponder];
+    return YES;
 }
 
 #pragma mark - View lifecycle
@@ -99,6 +225,9 @@
 
 - (void)dealloc {
     [super dealloc];
+    [name release];
+    [personality release];
+    [username release];
 }
 
 @end

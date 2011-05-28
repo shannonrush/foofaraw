@@ -11,6 +11,12 @@
 	<dict>
 		<key>standard</key>
 		<dict>
+			<key>intro2</key>
+			<string>My name is</string>
+			<key>intro1</key>
+			<string>I&apos;m your new iPhone app!</string>
+			<key>font</key>
+			<string>Helvetica</string>
 			<key>greeting</key>
 			<string>Hi!</string>
 		</dict>
