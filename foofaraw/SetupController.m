@@ -84,7 +84,8 @@
                         intro2View.alpha = 0.0;
                         usernameResponseView.alpha = 1.0;
                     }completion:^(BOOL finished) {
-                        [usernameResponseField becomeFirstResponder];
+                        if (finished) 
+                            [usernameResponseField becomeFirstResponder];
                     }];
                 }];
             }];
@@ -93,8 +94,38 @@
 }
 
 -(void)infoCollection {
-    [UIView animateWithDuration:2.0 delay:2.0 options:UIViewAnimationCurveEaseInOut animations:^{
+    UIView *hiView = [self hiView];
+    UIView *requestEmailView = [self requestEmailView];
+    emailResponseView = [self emailResponseView];
+    [self.view addSubview:hiView];
+    [self.view addSubview:requestEmailView];
+    [self.view addSubview:emailResponseView];
+    [hiView release];
+    [emailResponseView release];
+    [requestEmailView release];
+    [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationCurveEaseInOut animations:^{
         usernameResponseView.alpha = 0.0;
+        hiView.alpha = 1.0;
+    }completion:^(BOOL finished) {
+        [UIView animateWithDuration:2.0 delay:2.0 options:UIViewAnimationCurveEaseInOut animations:^ {
+            hiView.alpha = 0.0;
+            requestEmailView.alpha = 1.0;
+        }completion:^(BOOL finished) {
+            if (finished) 
+                [UIView animateWithDuration:2.0 delay:2.0 options:UIViewAnimationCurveEaseInOut animations:^{
+                    requestEmailView.alpha = 0.0;
+                    emailResponseView.alpha = 1.0;
+                }completion:^(BOOL finished) {
+                    if (finished) 
+                        [emailResponseField becomeFirstResponder];
+                }];
+        }];
+    }];
+}
+
+-(void)tutorial {
+    [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationCurveEaseInOut animations:^ {
+        emailResponseView.alpha = 0.0;
     }completion:^(BOOL finished) {
         
     }];
@@ -166,7 +197,7 @@
     usernameResponseImageView.image = usernameResponseImage;
     [usernameResponseView addSubview:usernameResponseImageView];
     [usernameResponseImageView release];
-    usernameResponseField = [[UITextField alloc]initWithFrame:CGRectMake(10.0, 40.0, 280.0, 33.0)];
+    usernameResponseField = [[UITextField alloc]initWithFrame:CGRectMake(20.0, 40.0, 260.0, 33.0)];
     usernameResponseField.delegate = self;
     usernameResponseField.returnKeyType = UIReturnKeyGo;
     usernameResponseField.placeholder = @"What should I call you?";
@@ -174,6 +205,65 @@
     [usernameResponseField release];
     usernameResponseView.alpha = 0.0;
     return usernameResponseView;
+}
+
+-(UIView *)hiView {
+    UIView *hiView = [[UIView alloc]initWithFrame:CGRectMake(20.0, 20.0, 290.0, 175.0)];
+    UIImage *hiImage = [UIImage imageNamed:@"bubble2r.png"];
+    UIImageView *hiImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 290.0, 175.0)];
+    hiImageView.image = hiImage;
+    [hiView addSubview:hiImageView];
+    [hiImageView release];
+    UILabel *hiLabel = [[UILabel alloc]initWithFrame:CGRectMake(10.0, 15.0, 270.0, 80.0)];
+    hiLabel.backgroundColor = [UIColor clearColor];
+    hiLabel.adjustsFontSizeToFitWidth = YES;
+    hiLabel.minimumFontSize = 10.0;
+    hiLabel.numberOfLines = 2;
+    hiLabel.textAlignment = UITextAlignmentCenter;
+    hiLabel.font = [UIFont fontWithName:[personality valueForKey:@"font"] size:20.0];
+    hiLabel.text = [NSString stringWithFormat:@"%@ %@!\n%@",[personality objectForKey:@"hi1"],username,[personality objectForKey:@"hi2"]];
+    [hiView addSubview:hiLabel];
+    [hiLabel release];
+    hiView.alpha = 0.0;
+    return hiView;
+}
+
+-(UIView *)requestEmailView {
+    UIView *requestEmailView = [[UIView alloc]initWithFrame:CGRectMake(2.0, 150.0, 290.0, 150.0)];
+    UIImage *requestEmailImage = [UIImage imageNamed:@"bubble2l.png"];
+    UIImageView *requestEmailImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 290.0, 150.0)];
+    requestEmailImageView.image = requestEmailImage;
+    [requestEmailView addSubview:requestEmailImageView];
+    [requestEmailImageView release];
+    UILabel *requestEmailLabel = [[UILabel alloc]initWithFrame:CGRectMake(10.0, 20.0, 270.0, 60.0)];
+    requestEmailLabel.adjustsFontSizeToFitWidth = YES;
+    requestEmailLabel.minimumFontSize = 10.0;
+    requestEmailLabel.backgroundColor = [UIColor clearColor];
+    requestEmailLabel.textAlignment = UITextAlignmentCenter;
+    requestEmailLabel.font = [UIFont fontWithName:[personality valueForKey:@"font"] size:20.0];
+    requestEmailLabel.text = [personality valueForKey:@"requestEmail"];
+    [requestEmailView addSubview:requestEmailLabel];
+    [requestEmailLabel release];
+    requestEmailView.alpha = 0.0;
+    return requestEmailView;
+}
+
+-(UIView *)emailResponseView {
+    emailResponseView = [[UIView alloc]initWithFrame:CGRectMake(20.0, 100.0, 300.0, 150.0)];
+    UIImage *emailResponseImage = [UIImage imageNamed:@"response1.png"];
+    UIImageView *emailResponseImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 300.0, 150.0)];
+    emailResponseImageView.image = emailResponseImage;
+    [emailResponseView addSubview:emailResponseImageView];
+    [emailResponseImageView release];
+    emailResponseField = [[UITextField alloc]initWithFrame:CGRectMake(20.0, 40.0, 260.0, 33.0)];
+    emailResponseField.delegate = self;
+    emailResponseField.returnKeyType = UIReturnKeyGo;
+    emailResponseField.keyboardType = UIKeyboardTypeEmailAddress;
+    emailResponseField.placeholder = @"What is your email address?";
+    [emailResponseView addSubview:emailResponseField];
+    [emailResponseField release];
+    emailResponseView.alpha = 0.0;
+    return emailResponseView;
 }
 
 -(void)submitUsername {
@@ -191,16 +281,34 @@
     [self infoCollection];
 }
 
-
+-(void)submitEmail {
+    foofarawAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Account" inManagedObjectContext:context];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDesc];
+    NSError *error;
+    NSManagedObject *account = [[context executeFetchRequest:request error:&error] objectAtIndex:0];
+    [request release];    
+    [account setValue:emailResponseField.text forKey:@"email"];
+	[context save:&error];
+    [self tutorial];
+}
 
 #pragma mark UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if (textField==usernameResponseField) {
-        [self submitUsername];
+    if ([textField.text length]>0) {
+        if (textField==usernameResponseField) {
+            [self submitUsername];
+        } else if (textField==emailResponseField) {
+            [self submitEmail];
+        }
+        [textField resignFirstResponder];
+        return YES;
+    } else {
+        return NO;
     }
-    [textField resignFirstResponder];
-    return YES;
 }
 
 #pragma mark - View lifecycle

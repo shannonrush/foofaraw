@@ -19,17 +19,25 @@
     
     UIView *usernameResponseView;
     UITextField *usernameResponseField;
+    UIView *emailResponseView;
+    UITextField *emailResponseField;
     
 }
 
+-(void)initApp;
+
 -(void)introduction;
 -(void)infoCollection;
--(void)initApp;
+-(void)tutorial;
 
 -(UIView *)greetingView;
 -(UIView *)intro1View;
 -(UIView *)intro2View;
 -(UIView *)usernameResponseView;
+-(UIView *)hiView;
+-(UIView *)requestEmailView;
+-(UIView *)emailResponseView;
 -(void)submitUsername;
+-(void)submitEmail;
 
 @end

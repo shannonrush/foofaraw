@@ -11,6 +11,12 @@
 	<dict>
 		<key>standard</key>
 		<dict>
+			<key>requestEmail</key>
+			<string>Where can I send you messages?</string>
+			<key>hi2</key>
+			<string>Nice to meet you!</string>
+			<key>hi1</key>
+			<string>Hi</string>
 			<key>intro2</key>
 			<string>My name is</string>
 			<key>intro1</key>
