@@ -13,6 +13,11 @@
 @interface SetupController : BaseController {
     AVCaptureSession *captureSession;
     AVCaptureVideoPreviewLayer *previewLayer;
+    NSString *name;
+    NSDictionary *personality;
 }
+
+-(void)setup;
+-(void)initApp;
 
 @end

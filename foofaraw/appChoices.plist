@@ -8,8 +8,12 @@
 		<string>Bob</string>
 	</array>
 	<key>personalities</key>
-	<array>
-		<string>Standard</string>
-	</array>
+	<dict>
+		<key>standard</key>
+		<dict>
+			<key>greeting</key>
+			<string>Hi!</string>
+		</dict>
+	</dict>
 </dict>
 </plist>
