@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "BaseController.h"
+#import <CoreMotion/CoreMotion.h>
 
 @interface SetupController : BaseController <UITextFieldDelegate> {
     AVCaptureSession *captureSession;
@@ -21,7 +22,13 @@
     UITextField *usernameResponseField;
     UIView *emailResponseView;
     UITextField *emailResponseField;
+    UIView *foofView;
     
+    CMMotionManager *motionManager;
+    NSOperationQueue *motionQueue;
+    CMAttitude *referenceAttitude;
+    
+    float pitch;
 }
 
 -(void)initApp;
@@ -29,6 +36,8 @@
 -(void)introduction;
 -(void)infoCollection;
 -(void)tutorial;
+-(void)addFoof;
+-(void)processMotion:(CMDeviceMotion *)motion withError:(NSError *)error;
 
 -(UIView *)greetingView;
 -(UIView *)intro1View;

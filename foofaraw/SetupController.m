@@ -32,7 +32,8 @@
     [previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
     [layer addSublayer:previewLayer];
     [captureSession startRunning];
-    [self initApp];
+//    [self initApp];
+    [self addFoof];
 }
 
 -(void)initApp {
@@ -127,7 +128,38 @@
     [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationCurveEaseInOut animations:^ {
         emailResponseView.alpha = 0.0;
     }completion:^(BOOL finished) {
-        
+        [self addFoof];
+    }];
+}
+
+-(void)addFoof {
+    foofView = [[UIView alloc]initWithFrame:CGRectMake(110.0, 180.0, 100.0, 100.0)];
+    UIImageView *foofImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 100.0, 100.0)];
+    UIImage *foofImage = [UIImage imageNamed:@"foof.png"];
+    foofImageView.image = foofImage;
+    [foofView addSubview:foofImageView];
+    [foofImageView release];
+    [self.view addSubview:foofView];
+    [foofView release];
+    
+    motionManager = [[CMMotionManager alloc] init];
+    motionManager.deviceMotionUpdateInterval = 0.1; 
+    motionQueue = [[NSOperationQueue mainQueue] retain];
+    CMDeviceMotionHandler motionHandler = ^ (CMDeviceMotion *motion, NSError *error) {
+        [self processMotion:motion withError:error];
+    };
+
+    [motionManager startDeviceMotionUpdatesToQueue:motionQueue withHandler:motionHandler];
+}
+
+-(void)processMotion:(CMDeviceMotion *)motion withError:(NSError *)error {
+    if (!referenceAttitude) {
+        referenceAttitude = [motionManager.deviceMotion.attitude retain];
+    }
+    CMAttitude *currentAttitude = motion.attitude;
+    [currentAttitude multiplyByInverseOfAttitude:referenceAttitude];
+    [UIView animateWithDuration:0.1 animations:^ {
+        foofView.transform = CGAffineTransformMakeRotation(currentAttitude.yaw);
     }];
 }
 
