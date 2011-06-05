@@ -10,8 +10,12 @@
 #import <AVFoundation/AVFoundation.h>
 #import "BaseController.h"
 #import <CoreMotion/CoreMotion.h>
+#import "OpenGLView.h"
 
-@interface SetupController : BaseController <UITextFieldDelegate> {
+@class OpenGLTexture3D;
+
+
+@interface SetupController : BaseController <UITextFieldDelegate, GLViewDelegate> {
     AVCaptureSession *captureSession;
     AVCaptureVideoPreviewLayer *previewLayer;
     NSString *name;
@@ -28,8 +32,14 @@
     NSOperationQueue *motionQueue;
     CMAttitude *referenceAttitude;
     
-    float pitch;
+    OpenGLView *glView;
+    OpenGLTexture3D *texture;
 }
+
+@property (nonatomic, retain) OpenGLTexture3D *texture;
+@property (nonatomic, retain) IBOutlet OpenGLView *glView;
+
+
 
 -(void)initApp;
 
@@ -37,6 +47,7 @@
 -(void)infoCollection;
 -(void)tutorial;
 -(void)addFoof;
+-(void)add3DFoof;
 -(void)processMotion:(CMDeviceMotion *)motion withError:(NSError *)error;
 
 -(UIView *)greetingView;

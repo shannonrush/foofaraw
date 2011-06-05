@@ -19,6 +19,10 @@
 		C3B5D5521391623F00A45F40 /* bubble2r@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B5D5501391623F00A45F40 /* bubble2r@2x.png */; };
 		C3B5D55913917AE800A45F40 /* response1.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B5D55713917AE800A45F40 /* response1.png */; };
 		C3B5D55A13917AE800A45F40 /* response1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B5D55813917AE800A45F40 /* response1@2x.png */; };
+		C3F3488A139963D600D3761C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F34889139963D600D3761C /* OpenGLES.framework */; };
+		C3F3488E139AE2F700D3761C /* OpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F3488D139AE2F700D3761C /* OpenGLView.m */; };
+		C3F348A4139BE0AA00D3761C /* OpenGLTexture3D.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F348A2139BE0A900D3761C /* OpenGLTexture3D.m */; };
+		C3F348A7139BE38C00D3761C /* texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3F348A6139BE38C00D3761C /* texture.jpg */; };
 		C3F94F23138DDD1D009EAD27 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F94F22138DDD1D009EAD27 /* UIKit.framework */; };
 		C3F94F25138DDD1D009EAD27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F94F24138DDD1D009EAD27 /* Foundation.framework */; };
 		C3F94F27138DDD1D009EAD27 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F94F26138DDD1D009EAD27 /* CoreGraphics.framework */; };
@@ -50,6 +54,15 @@
 		C3B5D5501391623F00A45F40 /* bubble2r@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble2r@2x.png"; sourceTree = "<group>"; };
 		C3B5D55713917AE800A45F40 /* response1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = response1.png; sourceTree = "<group>"; };
 		C3B5D55813917AE800A45F40 /* response1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "response1@2x.png"; sourceTree = "<group>"; };
+		C3F34889139963D600D3761C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		C3F3488C139AE2F700D3761C /* OpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLView.h; sourceTree = "<group>"; };
+		C3F3488D139AE2F700D3761C /* OpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLView.m; sourceTree = "<group>"; };
+		C3F348A0139BDFD300D3761C /* ship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ship.h; sourceTree = "<group>"; };
+		C3F348A1139BDFE400D3761C /* OpenGLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLCommon.h; sourceTree = "<group>"; };
+		C3F348A2139BE0A900D3761C /* OpenGLTexture3D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLTexture3D.m; sourceTree = "<group>"; };
+		C3F348A3139BE0AA00D3761C /* OpenGLTexture3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLTexture3D.h; sourceTree = "<group>"; };
+		C3F348A6139BE38C00D3761C /* texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = texture.jpg; sourceTree = "<group>"; };
+		C3F348A8139BE53C00D3761C /* ConstantsAndMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantsAndMacros.h; sourceTree = "<group>"; };
 		C3F94F1E138DDD1D009EAD27 /* foofaraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foofaraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F94F22138DDD1D009EAD27 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C3F94F24138DDD1D009EAD27 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -80,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3F3488A139963D600D3761C /* OpenGLES.framework in Frameworks */,
 				C39A89011392BBEF003E8F32 /* CoreMotion.framework in Frameworks */,
 				C3B5D535139079D300A45F40 /* QuartzCore.framework in Frameworks */,
 				C3F94F6B138DEDB6009EAD27 /* AVFoundation.framework in Frameworks */,
@@ -93,6 +107,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C3F348A5139BE0EE00D3761C /* OpenGL */ = {
+			isa = PBXGroup;
+			children = (
+				C3F348A8139BE53C00D3761C /* ConstantsAndMacros.h */,
+				C3F348A0139BDFD300D3761C /* ship.h */,
+				C3F348A1139BDFE400D3761C /* OpenGLCommon.h */,
+				C3F3488C139AE2F700D3761C /* OpenGLView.h */,
+				C3F3488D139AE2F700D3761C /* OpenGLView.m */,
+				C3F348A2139BE0A900D3761C /* OpenGLTexture3D.m */,
+				C3F348A3139BE0AA00D3761C /* OpenGLTexture3D.h */,
+			);
+			name = OpenGL;
+			sourceTree = "<group>";
+		};
 		C3F94F13138DDD1C009EAD27 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +141,7 @@
 		C3F94F21138DDD1D009EAD27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C3F34889139963D600D3761C /* OpenGLES.framework */,
 				C39A89001392BBEF003E8F32 /* CoreMotion.framework */,
 				C3B5D534139079D300A45F40 /* QuartzCore.framework */,
 				C3F94F6A138DEDB6009EAD27 /* AVFoundation.framework */,
@@ -127,6 +156,7 @@
 		C3F94F2A138DDD1D009EAD27 /* foofaraw */ = {
 			isa = PBXGroup;
 			children = (
+				C3F348A5139BE0EE00D3761C /* OpenGL */,
 				C3F94F33138DDD1D009EAD27 /* foofarawAppDelegate.h */,
 				C3F94F34138DDD1D009EAD27 /* foofarawAppDelegate.m */,
 				C3F94F85138F37C1009EAD27 /* BaseController.h */,
@@ -176,6 +206,7 @@
 		C3F94F8A138F4148009EAD27 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				C3F348A6139BE38C00D3761C /* texture.jpg */,
 				C3B5D5371391319400A45F40 /* bubble1.png */,
 				C3B5D5381391319400A45F40 /* bubble1@2x.png */,
 				C3B5D54B139140EB00A45F40 /* bubble2l.png */,
@@ -255,6 +286,7 @@
 				C3B5D55A13917AE800A45F40 /* response1@2x.png in Resources */,
 				C39A88FD1392B5ED003E8F32 /* foof.png in Resources */,
 				C39A88FE1392B5ED003E8F32 /* foof@2x.png in Resources */,
+				C3F348A7139BE38C00D3761C /* texture.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +303,8 @@
 				C3F94F60138DE94E009EAD27 /* WindowController.m in Sources */,
 				C3F94F83138F3592009EAD27 /* SetupController.m in Sources */,
 				C3F94F88138F37C1009EAD27 /* BaseController.m in Sources */,
+				C3F3488E139AE2F700D3761C /* OpenGLView.m in Sources */,
+				C3F348A4139BE0AA00D3761C /* OpenGLTexture3D.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
